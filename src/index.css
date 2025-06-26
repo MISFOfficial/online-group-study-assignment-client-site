@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+.bg {
+    background-image: url(/asset/group.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sr {
+    background-image: url(/asset/SR.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.CR {
+    background-image: url(/asset/CRA.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+.textarea-font {
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+.primary-text {
+    font-family: "Libre Baskerville", serif;
+}
+
+.dark-theme {
+    background-color: #2b1b61;
+}

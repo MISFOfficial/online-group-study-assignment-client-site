@@ -116,3 +116,9 @@ To set up the project locally, follow these steps:
    ```
 
 ---
+
+## 🔗 Useful Links
+[Frontend Repo](https://group-study-cfcff.web.app/**https://github.com/MISFOfficial/online-group-study-assignment-client-site)
+[Backend Repo](https://github.com/MISFOfficial/online-group-study-assignment-client-server)
+[Live Site](https://group-study-cfcff.web.app/)
+

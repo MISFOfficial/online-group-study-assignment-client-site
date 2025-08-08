@@ -26,7 +26,7 @@
 - **Frontend**: React, React Router, Tailwind CSS, daisyUi, Axios
 - **Backend**: Node js , Express Js, MongoDB, JWT
 
-##✨ Core Features
+## ✨ Core Features
 - User authentication with JWT
 
 - Responsive design for all devices

@@ -19,8 +19,8 @@ const Newsletter = () => {
     <div
       className={`relative py-12 overflow-hidden text-white ${
         theme
-          ? "bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500"
-          : "bg-gradient-to-r from-green-700 via-green-600 to-green-500"
+          ? "bg-blue-800"
+          : "bg-green-700 "
       }`}
     >
       {/* Animated glow effect */}

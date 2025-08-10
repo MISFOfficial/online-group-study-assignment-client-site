@@ -1,10 +1,9 @@
-import React, { use } from 'react';
+import React, { useContext } from 'react';
 import { FaUsers, FaCalendarAlt, FaBookOpen, FaSearch, FaUserGraduate, FaBrain, FaChartLine, FaGlobe, FaBell } from 'react-icons/fa';
 import { AuthContext } from '../../Auth/AuthContext';
 
 const Feature = () => {
-
-    const { theme } = use(AuthContext)
+    const { theme } = useContext(AuthContext);
 
     const features = [
         {
@@ -54,55 +53,70 @@ const Feature = () => {
         }
     ];
 
-return (
-    <section  className={`${theme ? 'dark-theme' : ''} py-12   sm:py-12 lg:py-16`}>
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="max-w-xl mx-auto text-center xl:max-w-2xl">
-                <h2 className="text-lg md:text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just
-                    getting started!</h2>
-                <p className="mb-4 text-sm md:text-lg">We are creating a tool that helps you be more productive and efficient when creating an assignment and mark on it.</p>
+    // Define dynamic classes based on theme
+    const cardBgGradient = theme
+        ? "bg-gradient-to-br from-blue-900 via-blue-700/80 to-blue-500"
+        : "bg-gradient-to-br from-green-800 via-green-700 to-green-500";
 
-            </div>
+    const borderColor = theme ? "border-blue-700" : "border-[#195506]";
+    const shadowColor = theme ? "hover:shadow-blue-500/40" : "hover:shadow-green-500/40";
 
+    const topRightDotColors = theme
+        ? ["bg-blue-300/70", "bg-blue-300/50", "bg-blue-300/30"]
+        : ["bg-green-300/50", "bg-green-300/30", "bg-green-300/10"];
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center text-sm md:text-md lg:text-lg  '>
-                {features.map(data =>
-                    <div
-                        className="relative  border-2 border-[rgba(68,133,30,0.5)] rounded-[1.5em] bg-gradient-to-br from-[#195506] via-greem-700/80 to-[rgba(33,142,9,0.66)] text-white font-nunito p-[1.5em] flex justify-center items-left flex-col gap-[1em] backdrop-blur-[12px] hover:shadow-2xl hover:shadow-green-500/40 transition-all duration-500 group/card hover:-translate-y-1 h-full"
-                    >
+    return (
+        <section className={`${theme ? 'dark-theme' : ''} py-12 sm:py-12 lg:py-16`}>
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="max-w-xl mx-auto text-center xl:max-w-2xl">
+                    <h2 className="text-lg md:text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">
+                        We are just getting started!
+                    </h2>
+                    <p className="mb-4 text-sm md:text-lg">
+                        We are creating a tool that helps you be more productive and efficient when creating an assignment and mark on it.
+                    </p>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center text-sm md:text-md lg:text-lg'>
+                    {features.map((data, idx) => (
                         <div
-                            className="absolute inset-0 bg-gradient-to-br from-green-800/30 via-green-900/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-[1.5em]"
-                        ></div>
-                        <div
-                            className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,50,190,0.1),transparent_60%)] group-hover/card:animate-pulse"
-                        ></div>
-
-                        <div className="absolute top-4 right-4 flex gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-300/50"></div>
-                            <div className="w-2 h-2 rounded-full bg-green-300/30"></div>
-                            <div className="w-2 h-2 rounded-full bg-green-300/10"></div>
-                        </div>
-
-                        <div
-                            className="relative z-10 transition-transform duration-300 group-hover/card:translate-y-[-2px] space-y-10"
+                            key={idx}
+                            className={`relative border-2 rounded-[1.5em] text-white font-nunito p-[1.5em] flex flex-col gap-[1em] justify-center backdrop-blur-[12px] hover:shadow-2xl transition-all duration-500 group/card hover:-translate-y-1 h-full
+              ${cardBgGradient} ${borderColor} ${shadowColor}`}
                         >
+                            <div
+                                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-[1.5em]"
+                                style={{
+                                    backgroundImage: theme
+                                        ? "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.15), transparent)"
+                                        : "linear-gradient(135deg, rgba(25, 85, 6, 0.3), rgba(33, 142, 9, 0.2), transparent)"
+                                }}
+                            ></div>
+                            <div
+                                className={`absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,50,190,0.1),transparent_60%)] group-hover/card:animate-pulse`}
+                            ></div>
 
-                            <div className='flex items-center gap-2 mt-4 text-lg  justify-center'>
-                                <p>{data.icon}</p>
-                                <p>{data.title}</p>
+                            <div className="absolute top-4 right-4 flex gap-2">
+                                <div className={`w-2 h-2 rounded-full ${topRightDotColors[0]}`}></div>
+                                <div className={`w-2 h-2 rounded-full ${topRightDotColors[1]}`}></div>
+                                <div className={`w-2 h-2 rounded-full ${topRightDotColors[2]}`}></div>
                             </div>
-                            <p className="text-[0.9em] text-purple-100/90 leading-relaxed font-light">
-                                {data.description}
-                            </p>
+
+                            <div className="relative z-10 transition-transform duration-300 group-hover/card:translate-y-[-2px] space-y-6">
+                                <div className='flex items-center gap-2 mt-4 text-lg justify-center'>
+                                    {data.icon}
+                                    <p>{data.title}</p>
+                                </div>
+                                <p className="text-[0.9em] text-white/90 leading-relaxed font-light">
+                                    {data.description}
+                                </p>
+                            </div>
                         </div>
-
-                    </div>
-                )}
-
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
 };
 
 export default Feature;

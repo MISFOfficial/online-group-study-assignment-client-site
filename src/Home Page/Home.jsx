@@ -7,6 +7,7 @@ import Footer from '../Component/Footer/Footer';
 import Loader from '../PrivetRout/loader/Loader';
 import { AuthContext } from '../Auth/AuthContext';
 import Feature from '../Component/Feature/Feature';
+import HomeCard from '../Component/HomeCard/HomeCard';
 
 const Home = () => {
     const {loader}=use(AuthContext)
@@ -20,6 +21,7 @@ const Home = () => {
             </title>
             <Banner></Banner>
             <Feature></Feature>
+            <HomeCard></HomeCard>
             <Faq></Faq>
             <GetApp></GetApp>
         </div>

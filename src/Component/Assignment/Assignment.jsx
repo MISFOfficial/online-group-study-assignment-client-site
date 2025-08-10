@@ -194,7 +194,7 @@ const Assignment = () => {
                                         <Link to={`/details/${data._id}`}>
                                             <button className="relative h-fit w-full px-[1.4em] py-[0.7em] border-[1px] border-blue-300/30 rounded-full flex justify-center items-center gap-[0.7em] overflow-hidden group/btn hover:border-blue-300/50 hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all duration-300 backdrop-blur-[12px] bg-blue-900 cursor-pointer">
                                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 via-blue-500/40 to-blue-600/40 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                                                <p className="relative z-10 font-medium tracking-wide">Details</p>
+                                                <p className="relative z-10 font-medium tracking-wide">See more...</p>
                                             </button>
                                         </Link>
                                     </div>

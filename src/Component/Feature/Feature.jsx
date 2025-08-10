@@ -55,7 +55,7 @@ const Feature = () => {
     ];
 
 return (
-    <section data-theme={`${theme ? 'dark' : ''}`} className="py-12   sm:py-12 lg:py-16">
+    <section  className={`${theme ? 'dark-theme' : ''} py-12   sm:py-12 lg:py-16`}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="max-w-xl mx-auto text-center xl:max-w-2xl">
                 <h2 className="text-lg md:text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just

@@ -7,7 +7,7 @@ const Banner = () => {
     const { theme } = use(AuthContext)
     return (
         <div data-theme={`${theme ? 'dark' : 'light'}`} className='bg h-[230px] md:h-[350px] lg:h-[700px] relative'>
-            <div className={`hero-overlay h-full ${theme ? 'bg-[#640f0fb2] text-gray-200' : 'bg-[#2d0f64c0] text-yellow-100'} `}>
+            <div className={`hero-overlay h-full ${theme ? 'bg-[#3c0b0bb2] text-gray-200' : 'bg-[#2d0f64c0] text-yellow-100'} `}>
                 <motion.h1
                     initial={{ y: 0, opacity: 0 }}
                     animate={{

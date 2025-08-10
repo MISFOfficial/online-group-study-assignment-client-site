@@ -73,7 +73,7 @@ const Navigation = () => {
                 </div>
             </div>
             {/* Navbar */}
-            <nav className={`${theme ? 'bg-[#2b1b61] shadow-2xl' : 'shadow-xl'} flex justify-between  px-5 md:px-10 lg:px-20 py-3 lg:py-0 items-center`}>
+            <nav className={`${theme ? 'dark-theme shadow-2xl' : 'shadow-xl'} flex justify-between  px-5 md:px-10 lg:px-20 py-3 lg:py-0 items-center`}>
                 <img className='w-10 md:w-18' src={`${theme ? '/asset/logo_white.png' : '/asset/logo_blue.gif'}`} alt="" />
                 {/* Desktop Menu */}
                 <div className='hidden lg:flex items-center  gap-10'>

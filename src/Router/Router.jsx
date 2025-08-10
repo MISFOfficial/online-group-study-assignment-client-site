@@ -13,6 +13,7 @@ import PAssign from "../Component/Pending Assignment/PAssign";
 import Main from "../Main/Main";
 import About from "../Component/About/About";
 import UserProfile from "../Component/UserProfile/UserProfile";
+import FeaturesPage from "../Component/FeaturesPage/FeaturesPage";
 
 export const router = createBrowserRouter([
     {
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
             {
                 path: '/about',
                 Component: About
+            },
+            {
+                path: '/upcoming',
+                Component: FeaturesPage
             },
            
         ]

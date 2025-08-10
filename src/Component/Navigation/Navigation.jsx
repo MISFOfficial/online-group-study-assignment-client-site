@@ -23,7 +23,8 @@ const Navigation = () => {
         { name: 'Home', path: '/' },
         { name: 'Assignment', path: '/assignment' },
         ...(user ? [{ name: 'Pending Assignment', path: `/pending/${user.email}` }] : []),
-        { name: 'About Us', path: '/about' }
+        { name: 'About Us', path: '/about' },
+        { name: 'Up Coming', path: '/upcoming' }
     ];
 
     const toggleMenu = () => setIsOpen(!isOpen);

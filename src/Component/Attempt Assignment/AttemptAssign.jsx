@@ -18,7 +18,7 @@ const AttemptAssign = () => {
                     <table className="table table-xs md:table-sm lg:table-md ">
                         {/* head */}
                         <thead>
-                            <tr className={` ${theme ? ' bg-blue-900' : ' bg-blue-500'} text-white`}>
+                            <tr className={` ${theme ? ' bg-blue-800' : ' bg-green-700'} text-white`}>
                                 <th>Examnee Name</th>
                                 <th>Title</th>
                                 <th className='text-center'>Status</th>

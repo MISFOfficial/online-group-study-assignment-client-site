@@ -1,13 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../Auth/AuthContext';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 
 const HomeCard = () => {
-    const { theme } = useContext(AuthContext);
+    const { theme, user } = useContext(AuthContext);
     const [assignmentData, setAssignmentData] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate()
 
     // Load assignments from server
     useEffect(() => {
@@ -28,6 +30,12 @@ const HomeCard = () => {
                 <h1 className="text-lg md:text-3xl">Loading...</h1>
             </div>
         );
+    }
+
+
+    const handleDetails = (id) => {
+        if (!user) return navigate('/sighnin')
+        navigate(`/details/${id}`)
     }
 
     // Define gradient classes based on theme
@@ -71,11 +79,11 @@ const HomeCard = () => {
                                                 : data?.description}
                                         </p>
                                     </div>
-                                    <Link to={`/details/${data._id}`}>
-                                        <button className={`w-full mt-2 px-4 py-2 rounded-lg ${buttonBgClass} text-white`}>
-                                            See more...
-                                        </button>
-                                    </Link>
+                                    <button onClick={() => handleDetails(data._id)}
+                                        className={`w-full mt-2 px-4 py-2 rounded-lg ${buttonBgClass} text-white`}>
+                                        See more...
+                                    </button>
+
                                 </div>
                             ))}
                         </div>

@@ -65,7 +65,7 @@ const PAssign = () => {
                     <table className="table table-xs md:table-sm lg:table-md ">
                         {/* head */}
                         <thead>
-                            <tr className={`${theme ? ' bg-blue-900' : ' bg-blue-500'} text-white`}>
+                            <tr className={`${theme ? ' bg-blue-800' : ' bg-green-700'} text-white`}>
                                 <th>Examnee Name</th>
                                 <th>Title</th>
                                 <th className='text-center'>Difficulty</th>
@@ -101,7 +101,7 @@ const PAssign = () => {
                                     <td>{data.complete_date}</td>
                                     <th>
                                         <button disabled={user.email === data.email}
-                                            className={`p-1 md:p-3 text-white  ${theme ? 'bg-purple-700' : 'bg-[green]'} ${user.email === data.email ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} w-full`}
+                                            className={`p-1 md:p-3 text-white  ${theme ? 'bg-blue-700' : 'bg-[green]'} ${user.email === data.email ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} w-full`}
                                             onClick={() => document.getElementById(`${data._id}`).showModal()}>{user.email === data.email ? 'Dont' : 'Mark'}
 
                                         </button>

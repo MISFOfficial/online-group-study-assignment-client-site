@@ -8,7 +8,7 @@ const Theme = () => {
   return (
     <div
       onClick={() => setTheme(!theme)}
-      className={`${theme? 'text-[yellow]' : 'text-gray-600'} py-1 cursor-pointer  transition duration-300 ease-in-out`}
+      className={`${theme? 'text-[yellow]' : 'text-gray-300'} py-1 cursor-pointer  transition duration-300 ease-in-out`}
     >
       {theme ? <MdWbSunny  size={30} ></MdWbSunny>: <MdModeNight size={30}></MdModeNight>}
     </div>

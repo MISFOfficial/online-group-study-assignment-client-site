@@ -59,7 +59,7 @@ const Details = () => {
                     <Model assignmentDataId={assignmentDataId}></Model>
                     <Link to='/assignment'>
                         <button
-                            className={`${theme ? 'hover:bg-[green] hover:border-[green]' : 'hover:bg-blue-900 hover:border-blue-900 hover:text-white'} border border-gray-400 mt-2 duration-200  w-[700px] max-w-[100%] mx-auto rounded-[15px]  py-3 font-semibold cursor-pointer`}>Back</button></Link>
+                            className={`${theme ? 'hover:bg-blue-800 hover:border-blue-800' : 'hover:bg-green-700 hover:border-green-700 hover:text-white'} border border-gray-400 mt-2 duration-200  w-[700px] max-w-[100%] mx-auto rounded-[15px]  py-3 font-semibold cursor-pointer`}>Back</button></Link>
                 </div>
             </div>
         </div>

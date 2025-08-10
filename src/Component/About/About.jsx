@@ -20,7 +20,7 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className={`text-4xl font-bold text-center mb-4 ${
-          theme ? "text-blue-400" : "text-blue-700"
+          theme ? "text-white" : "text-black"
         }`}
       >
         About Us
@@ -32,12 +32,12 @@ const About = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
         className={`text-lg text-center max-w-2xl mx-auto ${
-          theme ? "text-gray-300" : "text-gray-600"
+          theme ? "text-white" : "text-black"
         }`}
       >
         <span
           className={`font-semibold ${
-            theme ? "text-blue-300" : "text-blue-600"
+            theme ? "text-white" : "text-black"
           }`}
         >
           Online Group Study & Assignment

@@ -150,12 +150,12 @@ const Navigation = () => {
                         <IoMdClose onClick={toggleMenu} className='text-2xl cursor-pointer' />
                     </div>
 
-                    <ul className='flex flex-col gap-4 text-lg w-full'>
+                    <ul className='flex flex-col gap-4 text-lg w-full  items-end'>
                         {links.map((link, index) => (
                             <li key={index}>
                                 <Link
                                     to={link.path}
-                                    className={`block border p-1 ${location.pathname === link.path
+                                    className={` ${location.pathname === link.path
                                         ? `${theme ? 'text-white font-bold' : 'text-orange-600 font-bold'} `
                                         : ''}`}
                                     onClick={toggleMenu}

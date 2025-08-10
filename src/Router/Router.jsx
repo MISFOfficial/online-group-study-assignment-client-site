@@ -10,9 +10,9 @@ import AttemptAssign from "../Component/Attempt Assignment/AttemptAssign";
 import Details from "../Component/Assignment Details/Details";
 import UpdateAssign from "../Component/Assignment/UpdateAssign";
 import PAssign from "../Component/Pending Assignment/PAssign";
-import MyProfile from "../Component/My Profile/MyProfile";
 import Main from "../Main/Main";
 import About from "../Component/About/About";
+import UserProfile from "../Component/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
     {
@@ -82,16 +82,17 @@ export const router = createBrowserRouter([
                     credentials: 'include'
                 })
             },
-            {
+        {
                 path: '/myprofile',
                 element: <PrivetRout>
-                    <MyProfile></MyProfile>
+                    <UserProfile></UserProfile>
                 </PrivetRout>
             },
             {
                 path: '/about',
                 Component: About
             },
+           
         ]
     },
     {

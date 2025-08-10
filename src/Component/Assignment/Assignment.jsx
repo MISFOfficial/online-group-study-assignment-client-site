@@ -172,7 +172,11 @@ const Assignment = () => {
                                             <p>Marks: {data?.marks}</p>
                                             <p>{data?.difficulty}</p>
                                         </div>
-                                        <p className="text-[0.9em] leading-relaxed font-light">{data?.description}</p>
+                                          <p className='text-[12px]'>
+                                            {data?.description?.length > 100
+                                                ? `${data.description.slice(0, 100)}...`
+                                                : data?.description}..........
+                                        </p>
                                     </div>
 
                                     <div className='flex flex-col gap-5'>

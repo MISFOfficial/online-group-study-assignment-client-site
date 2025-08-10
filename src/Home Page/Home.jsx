@@ -8,6 +8,7 @@ import Loader from '../PrivetRout/loader/Loader';
 import { AuthContext } from '../Auth/AuthContext';
 import Feature from '../Component/Feature/Feature';
 import HomeCard from '../Component/HomeCard/HomeCard';
+import Newsletter from '../Component/Newsletter/Newsletter';
 
 const Home = () => {
     const {loader}=use(AuthContext)
@@ -23,7 +24,8 @@ const Home = () => {
             <Feature></Feature>
             <HomeCard></HomeCard>
             <Faq></Faq>
-            <GetApp></GetApp>
+            {/* <GetApp></GetApp> */}
+            <Newsletter></Newsletter>
         </div>
     );
 };

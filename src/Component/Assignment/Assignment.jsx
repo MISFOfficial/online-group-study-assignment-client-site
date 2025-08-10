@@ -24,7 +24,8 @@ const Assignment = () => {
             if (search) query.append('search', search);
             if (difficulty) query.append('difficulty', difficulty);
 
-            const res = await fetch(`https://group-study-platform-backend.vercel.app/assignment?${query.toString()}`);
+            // const res = await fetch(`https://group-study-platform-backend.vercel.app/assignment?${query.toString()}`);
+            const res = await fetch(`http://localhost:3000/assignment?${query.toString()}`);
             const data = await res.json();
             // console.log(data)
             setAssignmentData(data);
@@ -74,7 +75,10 @@ const Assignment = () => {
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        fetch(`https://group-study-platform-backend.vercel.app/assignment/${id}`, {
+                        // fetch(`https://group-study-platform-backend.vercel.app/assignment/${id}`, {
+                        //     method: 'DELETE',
+                        // })
+                        fetch(`http://localhost:3000/assignment/${id}`, {
                             method: 'DELETE',
                         })
                             .then(res => res.json())

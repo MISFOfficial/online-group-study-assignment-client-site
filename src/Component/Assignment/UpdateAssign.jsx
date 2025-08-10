@@ -26,7 +26,8 @@ const UpdateAssign = () => {
         const updatedAssignment = Object.fromEntries(formData.entries())
         // console.log(updatedAssignment)
 
-        fetch(`https://group-study-platform-backend.vercel.app/assignment/${_id}`, {
+        // fetch(`https://group-study-platform-backend.vercel.app/assignment/${_id}`,
+            fetch(`http://localhost:3000/assignment/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

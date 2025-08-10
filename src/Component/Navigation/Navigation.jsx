@@ -22,7 +22,8 @@ const Navigation = () => {
     const links = [
         { name: 'Home', path: '/' },
         { name: 'Assignment', path: '/assignment' },
-        ...(user ? [{ name: 'Pending Assignment', path: `/pending/${user.email}` }] : [])
+        ...(user ? [{ name: 'Pending Assignment', path: `/pending/${user.email}` }] : []),
+        { name: 'About Us', path: '/about' }
     ];
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -82,14 +83,14 @@ const Navigation = () => {
                                 <Link
                                     to={link.path}
                                     className={` ${location.pathname === link.path
-                                        ? `${theme ? 'text-white' : 'text-orange-500'}`
-                                        : `${theme ? 'text-orange-500' : 'text-black'}`
+                                        ? `${theme ? 'text-white' : 'text-blue-700'}`
+                                        : `${theme ? 'text-blue-300' : 'text-black'}`
                                         }`}>
                                     {link.name}
                                     {location.pathname === link.path && (
                                         <motion.div
                                             layoutId="underline"
-                                            className={`${theme ? 'bg-white' : 'bg-orange-500'} absolute left-0 bottom-0 w-full h-[2px] rounded`}
+                                            className={`${theme ? 'bg-white' : 'bg-blue-700'} absolute left-0 bottom-0 w-full h-[2px] rounded`}
                                             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                                         />
                                     )}

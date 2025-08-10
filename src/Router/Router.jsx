@@ -12,6 +12,7 @@ import UpdateAssign from "../Component/Assignment/UpdateAssign";
 import PAssign from "../Component/Pending Assignment/PAssign";
 import MyProfile from "../Component/My Profile/MyProfile";
 import Main from "../Main/Main";
+import About from "../Component/About/About";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +27,8 @@ export const router = createBrowserRouter([
             {
                 path: '/assignment',
                 Component: Assignment,
-                loader: () => fetch('https://group-study-platform-backend.vercel.app/assignment')
+                // loader: () => fetch('https://group-study-platform-backend.vercel.app/assignment')
+                loader: () => fetch('http://localhost:3000/assignment')
             },
             {
                 path: '/createassignment',
@@ -39,7 +41,10 @@ export const router = createBrowserRouter([
                 element: <PrivetRout>
                     <Details></Details>
                 </PrivetRout>,
-                loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/assignment/${params.id}`,{
+                // loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/assignment/${params.id}`,{
+                //     credentials: 'include'
+                // }),
+                loader: ({ params }) => fetch(`http://localhost:3000/assignment/${params.id}`,{
                     credentials: 'include'
                 }),
             },
@@ -48,14 +53,20 @@ export const router = createBrowserRouter([
                 element: <PrivetRout>
                     <UpdateAssign></UpdateAssign>
                 </PrivetRout>,
-                loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/assignment/${params.id}`,{
+                // loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/assignment/${params.id}`,{
+                //     credentials: 'include'
+                // }),
+                loader: ({ params }) => fetch(`http://localhost:3000/assignment/${params.id}`,{
                     credentials: 'include'
                 }),
             },
             {
                 path: '/attemptassignment/:email',
                 element: <PrivetRout><AttemptAssign></AttemptAssign></PrivetRout>,
-                loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/takeassignment/user/${params.email}`, {
+                // loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/takeassignment/user/${params.email}`, {
+                //     credentials: 'include'
+                // })
+                loader: ({ params }) => fetch(`http://localhost:3000/takeassignment/user/${params.email}`, {
                     credentials: 'include'
                 })
             },
@@ -64,7 +75,10 @@ export const router = createBrowserRouter([
                 element: <PrivetRout>
                     <PAssign></PAssign>
                 </PrivetRout>,
-                loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/takeassignment?email=${params.email}`, {
+                // loader: ({ params }) => fetch(`https://group-study-platform-backend.vercel.app/takeassignment?email=${params.email}`, {
+                //     credentials: 'include'
+                // })
+                loader: ({ params }) => fetch(`http://localhost:3000/takeassignment?email=${params.email}`, {
                     credentials: 'include'
                 })
             },
@@ -73,6 +87,10 @@ export const router = createBrowserRouter([
                 element: <PrivetRout>
                     <MyProfile></MyProfile>
                 </PrivetRout>
+            },
+            {
+                path: '/about',
+                Component: About
             },
         ]
     },

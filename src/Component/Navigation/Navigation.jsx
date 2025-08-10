@@ -59,7 +59,7 @@ const Navigation = () => {
 
     return (
         <div data-theme={`${theme ? 'dark' : 'light'}`} className='sticky top-0 z-[1000] ' >
-            <div className='bg-blue-500 text-white  items-center justify-between px-5 md:px-10 lg:px-20 hidden lg:flex'>
+            <div className={`${theme ? 'bg-blue-700' : 'bg-green-700'} text-white  items-center justify-between px-5 md:px-10 lg:px-20 hidden lg:flex`}>
                 <div className='flex items-center gap-5'>
                     <h1 className=''>follow us</h1>
                     <div className='flex items-center text-xl gap-2 text-white'>
@@ -168,8 +168,12 @@ const Navigation = () => {
 
                     {
                         !user ? <div className='mt-8 flex flex-col gap-3 w-full '>
-                            <SignBtn></SignBtn>
-                            <RegisterBtn></RegisterBtn>
+                            <Link to={'/signin'} className='font-bold flex items-center justify-end'>
+                            <button className=''>Sign In</button>
+                            </Link>
+                            <Link to={'/register'} className='font-bold flex items-center justify-end'>
+                            <button className=''>Register</button>
+                            </Link>
                         </div> : <div>
 
                         </div>

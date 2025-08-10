@@ -7,7 +7,7 @@ const Banner = () => {
     const { theme } = use(AuthContext)
     return (
         <div data-theme={`${theme ? 'dark' : 'light'}`} className='bg h-[230px] md:h-[350px] lg:h-[700px] relative'>
-            <div className={`hero-overlay h-full ${theme ? 'bg-[#3c0b0bb2] text-gray-200' : 'bg-[#2d0f64c0] text-yellow-100'} `}>
+            <div className='hero-overlay h-full text-white'>
                 <motion.h1
                     initial={{ y: 0, opacity: 0 }}
                     animate={{
@@ -33,7 +33,7 @@ const Banner = () => {
                         transition: { duration: 1 }
                     }}
                     className='ml-5 mt-10 md:ml-20 md:mt-10 lg:ml-30 lg:mt-20 flex gap-10'>
-                    <button className={`btn h-auto text-[10px] lg:text-[16px] primary-text border-none ${theme ? 'bg-red-500 text-white' : 'bg-[#184f18] text-white'}`}>Get Start</button>
+                   
                     <div>
                         <h1 className='primary-text text-yellow-300 text-[10px] lg:text-[16px]'>100k+</h1>
                         <p className='primary-text text-[10px] lg:text-[16px]'>Hours Comleted</p>

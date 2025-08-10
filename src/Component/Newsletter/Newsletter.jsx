@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Auth/AuthContext";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const { theme } = useContext(AuthContext);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if (!email) return alert("Please enter a valid email");
-    alert(`Subscribed with: ${email}`);
+    if (!email) return toast("Please enter a valid email");
+    toast(`Subscribed with: ${email}`);
     setEmail("");
   };
 
   return (
-    <div className="relative bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white py-12 px-6 rounded-2xl shadow-xl overflow-hidden">
+    <div
+      className={`relative py-12 overflow-hidden text-white ${
+        theme
+          ? "bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500"
+          : "bg-gradient-to-r from-green-700 via-green-600 to-green-500"
+      }`}
+    >
       {/* Animated glow effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_60%)] animate-pulse"></div>
 
@@ -54,7 +63,9 @@ const Newsletter = () => {
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold shadow-lg hover:opacity-90 transition"
+            className={`px-6 py-3 rounded-full font-semibold shadow-lg hover:opacity-90 transition ${
+              theme ? "bg-white text-black" : "bg-white text-black"
+            }`}
           >
             Subscribe
           </motion.button>

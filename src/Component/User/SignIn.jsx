@@ -95,11 +95,11 @@ const SignIn = () => {
                             <FaGoogle className='text-2xl '></FaGoogle>
                             Sign in with Google
                         </button>
-                        <button type='button'
+                        {/* <button type='button'
                             className="mt-6 bg-black text-white font-medium py-2 px-4 rounded-md w-full cursor-pointer transition flex items-center gap-5 justify-center">
                             <FaGithub className='text-2xl'></FaGithub>
                             Sign in with GitHUB
-                        </button>
+                        </button> */}
                         <div className={`divider ${theme ? 'before:bg-gray-400 after:bg-gray-400' : ''}`}>or</div>
                         <div className="flex flex-col gap-4">
                             <input

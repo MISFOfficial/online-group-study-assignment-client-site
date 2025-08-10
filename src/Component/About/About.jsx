@@ -11,7 +11,7 @@ const About = () => {
       className={`py-12 px-6 transition-colors duration-500 ${
         theme
           ? "bg-gray-900 text-gray-200"
-          : "bg-gradient-to-b from-blue-50 to-white text-gray-800"
+          : "bg-white"
       }`}
     >
       {/* Page Title */}

@@ -113,7 +113,7 @@ const Navigation = () => {
                                     <Link to='/myprofile'><li className='hover:bg-[green] hover:text-white duration-200 rounded-sm'><p><FaUser></FaUser>My Profile</p></li></Link>
                                 </ul>
                             </div>
-                            <button onClick={handleLogOut} className={`${theme ? 'bg-green-900 lg:bg-red-600' : 'bg-green-900 text-white '} font-extrabold cursor-pointer  text-white px-5 py-4 text-lg w-full h-full flex items-center `}> 
+                            <button onClick={handleLogOut} className={`${theme ? 'bg-green-900 lg:bg-red-600' : 'bg-green-700 text-white '} font-extrabold cursor-pointer  text-white px-5 py-4 text-lg w-full h-full flex items-center `}> 
                             <span className='text-3xl'><MdOutlineLogout /> </span>   Logout</button>
                                 
                         </div>

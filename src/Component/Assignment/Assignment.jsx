@@ -23,7 +23,7 @@ const Assignment = () => {
             if (search) query.append('search', search);
             if (difficulty) query.append('difficulty', difficulty);
 
-            const res = await fetch(`http://localhost:3000/assignment?${query.toString()}`);
+            const res = await fetch(`https://group-study-platform-backend.vercel.app/assignment?${query.toString()}`);
             const data = await res.json();
             setAssignmentData(data);
         } catch (err) {
@@ -51,6 +51,13 @@ const Assignment = () => {
         }
     };
 
+    const handleDetails = (id) => {
+        if (!user) return navigate('/signin')
+        navigate(`/details/${id}`)
+        // console.log(id)
+
+    }
+
     const handleDeleteAssignment = (id, userEmail) => {
         if (user && user.email) {
             if (user.email === userEmail) {
@@ -72,7 +79,7 @@ const Assignment = () => {
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        fetch(`http://localhost:3000/assignment/${id}`, {
+                        fetch(`https://group-study-platform-backend.vercel.app/assignment/${id}`, {
                             method: 'DELETE',
                         })
                             .then(res => res.json())
@@ -154,7 +161,7 @@ const Assignment = () => {
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select>
-                <button onClick={fetchFilteredAssignments} className={`btn btn-primary w-full md:w-auto ${theme? 'bg-blue-700' : 'bg-green-700'}`}>
+                <button onClick={fetchFilteredAssignments} className={`btn btn-primary w-full md:w-auto ${theme ? 'bg-blue-700' : 'bg-green-700'}`}>
                     Search
                 </button>
             </div>
@@ -209,7 +216,7 @@ const Assignment = () => {
                                         <p className="relative z-10 font-medium">Update</p>
                                     </button>
                                     <button
-                                        onClick={() => handleDeleteAssignment(data._id, data.user)}
+                                        onClick={() => handleDeleteAssignment(data?._id, data.user)}
                                         className={`relative h-fit w-fit px-[1.4em] py-[0.7em] mt-2 border-[1px] rounded-full flex justify-center items-center gap-[0.7em] overflow-hidden group/btn active:scale-95 transition-all duration-300 backdrop-blur-[12px] cursor-pointer
                                         ${btnBg} ${btnBorder} hover:opacity-90 ${btnHoverBorder} ${btnHoverShadow}`}
                                     >
@@ -217,14 +224,12 @@ const Assignment = () => {
                                     </button>
                                 </div>
 
-                                <Link to={`/details/${data._id}`}>
-                                    <button
-                                        className={`relative h-fit w-full px-[1.4em] py-[0.7em] border-[1px] rounded-full flex justify-center items-center gap-[0.7em] overflow-hidden group/btn active:scale-95 transition-all duration-300 backdrop-blur-[12px] cursor-pointer
+                                <button onClick={() => handleDetails(data?._id)}
+                                    className={`relative h-fit w-full px-[1.4em] py-[0.7em] border-[1px] rounded-full flex justify-center items-center gap-[0.7em] overflow-hidden group/btn active:scale-95 transition-all duration-300 backdrop-blur-[12px] cursor-pointer
                                         ${btnBg} ${btnBorder} hover:opacity-90 ${btnHoverBorder} ${btnHoverShadow}`}
-                                    >
-                                        <p className="relative z-10 font-medium tracking-wide">See more...</p>
-                                    </button>
-                                </Link>
+                                >
+                                    <p className="relative z-10 font-medium tracking-wide">See more...</p>
+                                </button>
                             </div>
 
                             <div className={`absolute bottom-4 left-4 w-8 h-8 rounded-full blur-sm group-hover/card:animate-pulse

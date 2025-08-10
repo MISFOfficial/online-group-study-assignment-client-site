@@ -11,7 +11,7 @@ const HomeCard = () => {
 
     // Load assignments from server
     useEffect(() => {
-        axios.get('http://localhost:3000/assignment') // change to your backend API endpoint
+        axios.get('https://group-study-platform-backend.vercel.app/assignment') // change to your backend API endpoint
             .then(res => {
                 setAssignmentData(res.data);
                 setLoading(false);
